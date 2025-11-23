@@ -1,0 +1,215 @@
+ACTIVITY 5
+
+
+
+
+RESEARCH : A  phone number directory is essentially a database that contains contact information, including phone numbers, names, and sometimes addresses, for individuals and businesses.
+Think of it as a modern-day version of the old-school phone book, but with more advanced search capabilities and often more detailed information.
+These directories are used by sales teams, marketers, and even individuals who need to find contact details quickly. They can be accessed online, and some are free while others require a subscription or payment. The key difference between free and paid directories usually comes down to the depth of information, accuracy, and additional features like reverse phone lookup or business-specific data.
+
+Find Accurate Contact Information: Instead of guessing or relying on outdated lists, you can use directories to get the most current phone numbers.
+Save Time: Searching for contacts manually can take hours. Directories streamline the process, letting you focus on selling.
+Expand Your Reach: With access to millions of records, you can find new leads and opportunities you might not have discovered otherwise.
+Verify Information: Some directories offer reverse lookup features, so you can confirm who a number belongs to before making the call.
+
+
+
+REFERENCE : https://www.trellus.ai/learning-center/public-phone-number-directory 
+ 
+
+
+ANALYSE :
+ Registration + Billing System for PG Rooms
+User can register as a new member.
+
+
+The program shows room options with prices.
+
+
+Takes user input for:
+
+
+Room type (1–4)
+
+
+Food included or not (YES=1 / NO=0)
+
+
+Calculates:
+
+
+Total price
+
+
+GST (18%)
+
+
+Final bill amount
+
+
+B. Customer Database Search
+Program stores 5 customer IDs.
+
+
+If ID matches predefined values, it prints:
+
+
+Room number
+
+
+Name
+
+
+Food status
+
+
+Total monthly bill
+
+
+If no match → prints “No match found”
+
+
+
+
+
+
+
+IDEATE:
+Creating a program on the bill of customer after taking input of customer ID of 10 digit
+number . After taking the input  from user ,the program should execute that the all information of customer like 
+
+
+
+  Also,  at the end when customer ID is not found there should be a message of ‘invalid customer id’ or ‘not found’.
+
+Build in :
+
+
+#include <stdio.h>
+struct bill{
+    char name[50];
+    int ID;
+    char list_of_products[50] ;
+    
+};
+int main() {
+    struct bill C[5];
+    int ID;
+    char choice;
+    int code,qty;
+    float price = 0, total, gst, final_amount;
+
+    
+                printf("Do you want to register new member ?\n");
+            printf("1. Yes\n2. No\n");
+            printf("Enter your choice: ");
+            scanf("%d", &choice);
+
+            switch(choice) {
+                case 1: {
+                    char newname[50];
+                    printf("Enter new customer name: ");
+                    scanf("%s", newname);
+printf(" \n PG FOR BOYS AND GIRLS \n ");
+printf("1. single sharing room : ₹12500 per month\n");
+printf("2. double sharing room : ₹10000 per month\n");
+printf("3. triple sharing room : ₹7500 per month\n");
+printf("4. four sharing room : ₹5500 per month\n");
+printf("5.if you want include food ,then extra 3300 will be added  per month\n");
+printf("\n++NOTE++ \n");
+printf("{}there are   beds are available for you {} ");
+
+printf("\nYour rooms light bill will be paid by equilly distributing between room members\n ");
+   for (int i =0;i<1;i++){                  
+    printf("\nEnter ROOM SHARING  Code (1-4): ");
+    scanf("%d", &code);
+
+    printf("include food :  ( if YES=1 or NO =0) ::");
+    scanf("%d", &qty);
+    if(qty==1)
+        qty=3300;
+    
+    else
+        qty=0;
+    
+
+}
+    if (code == 1) price = 12500;
+    else if (code == 2) price = 10000;
+    else if (code == 3) price = 7500;
+    else if (code == 4) price = 55000;
+   
+    
+    else {
+        printf("Invalid code!\n");
+        return 0;
+    }
+
+    total = price + qty;
+    gst = total * 0.18;             
+    final_amount = total + gst;
+
+    printf("\n--- BILL ---\n");
+    printf("Price (Without GST): Rs. %.2f\n", total);
+    printf("GST (18%%): Rs. %.2f\n", gst);
+    printf("Final Amount (With GST): Rs. %.2f\n\n\n", final_amount);
+    
+    
+
+                    break;
+                }
+
+                case 2:
+                    printf("Returning to main menu...\n\n");
+                    break;
+
+                default:
+                    printf("Invalid choice!\n\n");
+                    break;
+            }
+    
+    
+    
+    for(int i=0;i<5;i++){
+         printf("Enter the customer ID:");
+        scanf("%d",&C[i].ID);
+        if(C[i].ID==1040){
+             printf("room no : R46");
+            printf("the name of customer :Nishant\n");
+            printf("including food : yes ");
+            printf("Total bill of working month :₹12744\n\n");
+        }
+        else if(C[i].ID==1033){
+             printf("room no : R43");
+            printf("the name of customer :Utkarsh \n");
+           printf("including food : yes ");
+            printf("Total bill of working month :₹14750\n\n");
+        }
+         else if(C[i].ID==1037){
+              printf("room no : R45");
+            printf("the name of customer :shashank  \n");
+             printf("including food : no");
+            printf("Total bill of working month :₹8850\n\n");
+         }
+         else if(C[i].ID==1039){
+              printf("room no : R40");
+            printf("the name of customer :kushal   \n");
+            printf("including food : no ");
+            printf("Total bill of working month :₹8989\n\n");
+         }
+          else if(C[i].ID==1035){
+              printf("room no : R39");
+            printf("the name of customer :sarang   \n");
+            printf("including food : yes ");
+            printf("Total bill of working month :₹12744\n\n");
+         }
+        else{
+            printf("No match found!\n");
+
+        
+    }
+}
+return 0;
+
+}
+
