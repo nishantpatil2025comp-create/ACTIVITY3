@@ -1,0 +1,127 @@
+#include <stdio.h>
+struct bill{
+    char name[50];
+    int ID;
+    char list_of_products[50] ;
+    
+};
+int main() {
+    struct bill C[5];
+    int ID;
+    char choice;
+    int code,qty;
+    float price = 0, total, gst, final_amount;
+
+    
+                printf("Do you want to register new member ?\n");
+            printf("1. Yes\n2. No\n");
+            printf("Enter your choice: ");
+            scanf("%d", &choice);
+
+            switch(choice) {
+                case 1: {
+                    char newname[50];
+                    printf("Enter new customer name: ");
+                    scanf("%s", newname);
+printf(" \n PG FOR BOYS AND GIRLS \n ");
+printf("1. single sharing room : ₹12500 per month\n");
+printf("2. double sharing room : ₹10000 per month\n");
+printf("3. triple sharing room : ₹7500 per month\n");
+printf("4. four sharing room : ₹5500 per month\n");
+printf("5.if you want include food ,then extra 3300 will be added  per month\n");
+printf("\n++NOTE++ \n");
+printf("{}there are   beds are available for you {} ");
+
+printf("\nYour rooms light bill will be paid by equilly distributing between room members\n ");
+   for (int i =0;i<1;i++){                  
+    printf("\nEnter ROOM SHARING  Code (1-4): ");
+    scanf("%d", &code);
+
+    printf("include food :  ( if YES=1 or NO =0) ::");
+    scanf("%d", &qty);
+    if(qty==1)
+        qty=3300;
+    
+    else
+        qty=0;
+    
+
+}
+    if (code == 1) price = 12500;
+    else if (code == 2) price = 10000;
+    else if (code == 3) price = 7500;
+    else if (code == 4) price = 55000;
+   
+    
+    else {
+        printf("Invalid code!\n");
+        return 0;
+    }
+
+    total = price + qty;
+    gst = total * 0.18;             
+    final_amount = total + gst;
+
+    printf("\n--- BILL ---\n");
+    printf("Price (Without GST): Rs. %.2f\n", total);
+    printf("GST (18%%): Rs. %.2f\n", gst);
+    printf("Final Amount (With GST): Rs. %.2f\n\n\n", final_amount);
+    
+    
+
+                    break;
+                }
+
+                case 2:
+                    printf("Returning to main menu...\n\n");
+                    break;
+
+                default:
+                    printf("Invalid choice!\n\n");
+                    break;
+            }
+    
+    
+    
+    for(int i=0;i<5;i++){
+         printf("Enter the customer ID:");
+        scanf("%d",&C[i].ID);
+        if(C[i].ID==1040){
+             printf("room no : R46");
+            printf("the name of customer :Nishant\n");
+            printf("including food : yes ");
+            printf("Total bill of working month :₹12744\n\n");
+        }
+        else if(C[i].ID==1033){
+             printf("room no : R43");
+            printf("the name of customer :Utkarsh \n");
+           printf("including food : yes ");
+            printf("Total bill of working month :₹14750\n\n");
+        }
+         else if(C[i].ID==1037){
+              printf("room no : R45");
+            printf("the name of customer :shashank  \n");
+             printf("including food : no");
+            printf("Total bill of working month :₹8850\n\n");
+         }
+         else if(C[i].ID==1039){
+              printf("room no : R40");
+            printf("the name of customer :kushal   \n");
+            printf("including food : no ");
+            printf("Total bill of working month :₹8989\n\n");
+         }
+          else if(C[i].ID==1035){
+              printf("room no : R39");
+            printf("the name of customer :sarang   \n");
+            printf("including food : yes ");
+            printf("Total bill of working month :₹12744\n\n");
+         }
+        else{
+            printf("No match found!\n");
+
+        
+    }
+}
+return 0;
+
+}
